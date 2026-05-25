@@ -129,11 +129,13 @@ git commit -m "feat!: restructure authentication to support multi-user roles"
 
 ### Pushing and Triggering a Release
 
-Once committed, push to `dev`:
+Once committed, push to the branch that matches the release you want:
 
 ```bash
-git push origin dev
+git push origin <branch>
 ```
+
+Push to `dev` to generate beta pre-release tags such as `v1.1.0-beta.1`, or push to `main` to publish the next stable release.
 
 The GitHub Actions runner will automatically:
 1. Analyze the commit prefix
