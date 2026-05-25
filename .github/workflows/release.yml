@@ -1,0 +1,29 @@
+name: Automated Semantic Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Generate Version Tag
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Semantic Release Executive
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
