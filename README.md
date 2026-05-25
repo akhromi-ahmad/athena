@@ -4,6 +4,8 @@ A personal Laravel learning project — built from scratch, one layer at a time.
 
 Athena is not just a CRUD app. It is a structured journey through professional Laravel development: from the first migration to a fully functional, maintainable, industry-standard web application.
 
+**Default development branch:** `dev`
+
 ---
 
 ## What This Project Is
@@ -65,6 +67,7 @@ This repository is a learning ground with real standards. Every feature is built
 # 1. Clone the repository
 git clone https://github.com/akhromi-ahmad/athena.git
 cd athena
+git switch -c dev --track origin/dev
 
 # 2. Install dependencies
 composer install
@@ -126,10 +129,10 @@ git commit -m "feat!: restructure authentication to support multi-user roles"
 
 ### Pushing and Triggering a Release
 
-Once committed, push to `main`:
+Once committed, push to `dev`:
 
 ```bash
-git push origin main
+git push origin dev
 ```
 
 The GitHub Actions runner will automatically:
@@ -144,7 +147,7 @@ The GitHub Actions runner will automatically:
 When pulling to a production server, always include `--tags` so the server recognizes the latest version:
 
 ```bash
-git pull origin main --tags
+git pull origin dev --tags
 ```
 
 ---
