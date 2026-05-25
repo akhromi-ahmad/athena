@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/akhromi-ahmad/athena/compare/v1.0.0...v1.1.0) (2026-05-25)
+
+
+### Features
+
+* add beta prereleases for dev branch ([de3ae34](https://github.com/akhromi-ahmad/athena/commit/de3ae3462d6e8586985552147d86a0dc0c8cc290))
+
 # 1.0.0 (2026-05-25)
 
 
