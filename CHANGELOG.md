@@ -1,3 +1,10 @@
+# [1.2.0-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.0...v1.2.0-beta.1) (2026-05-30)
+
+
+### Features
+
+* update user tbale & add the products table ([f428bcc](https://github.com/akhromi-ahmad/athena/commit/f428bcc3e930cac2713c05a59376c1c72505adf0))
+
 # [1.1.0](https://github.com/akhromi-ahmad/athena/compare/v1.0.0...v1.1.0) (2026-05-25)
 
 
