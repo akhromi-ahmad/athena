@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         :root {
-            --bg: #f4f6fb;
+            --bg: #313131;
             --card: #ffffff;
             --text: #1f2937;
             --muted: #6b7280;
@@ -26,7 +27,7 @@
             place-items: center;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
-            background: radial-gradient(circle at top, #dff4f1 0%, var(--bg) 45%);
+            background: #000000;
         }
 
         .card {
@@ -98,27 +99,49 @@
         }
     </style>
 </head>
+
 <body>
     <main class="card">
-        <h1>Login</h1>
-        <p>Please enter your credentials.</p>
+        <h1>Signup</h1>
+        <br>
 
-        <form method="post" action="#">
+        <form method="post" action="/signup">
+            @csrf
+
+            @error('general')
+            <div style="color:#b91c1c;margin-bottom:0.5rem;font-size:0.95rem">{{ $message }}</div>
+            @enderror
+
             <label for="username">
                 Username
-                <input id="username" name="username" type="text" autocomplete="username" required>
+                <input id="username" name="username" type="text" autocomplete="username" required value="{{ old('username') }}">
+                @error('username')
+                <div style="color:#b91c1c;margin-top:0.25rem;font-size:0.9rem">{{ $message }}</div>
+                @enderror
             </label>
 
             <label for="password">
                 Password
                 <input id="password" name="password" type="password" autocomplete="current-password" required>
+                @error('password')
+                <div style="color:#b91c1c;margin-top:0.25rem;font-size:0.9rem">{{ $message }}</div>
+                @enderror
             </label>
 
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
             <div class="actions">
-                <button class="btn-login" type="submit">Login</button>
-                <button class="btn-reset" type="reset">Reset</button>
+                <button class="btn-login" type="submit">
+                    Signup
+                </button>
+            </div>
+            <div class="actions">
+                <button class="btn-login" type="button" onclick="window.location.href='/login'" style="background: #0066cc; color: #ffffff;">
+                    Login
+                </button>
             </div>
         </form>
     </main>
 </body>
+
 </html>

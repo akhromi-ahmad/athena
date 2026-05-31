@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         :root {
-            --bg: #f4f6fb;
+            --bg: #313131;
             --card: #ffffff;
             --text: #1f2937;
             --muted: #6b7280;
@@ -26,7 +27,7 @@
             place-items: center;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
-            background: radial-gradient(circle at top, #dff4f1 0%, var(--bg) 45%);
+            background: #000000;
         }
 
         .card {
@@ -98,15 +99,16 @@
         }
     </style>
 </head>
+
 <body>
     <main class="card">
         <h1>Login</h1>
         <p>Please enter your credentials.</p>
 
-        <form method="post" action="#">
-            <label for="username">
+        <form method="post" action="/login">
+            <label for="email">
                 Username
-                <input id="username" name="username" type="text" autocomplete="username" required>
+                <input id="email" name="username" type="text" autocomplete="username" required>
             </label>
 
             <label for="password">
@@ -115,10 +117,17 @@
             </label>
 
             <div class="actions">
-                <button class="btn-login" type="submit">Login</button>
-                <button class="btn-reset" type="reset">Reset</button>
+                <button class="btn-login" type="submit">
+                    Login
+                </button>
+            </div>
+            <div class="actions">
+                <button class="btn-login" type="button" onclick="window.location.href='/signup'" style="background: #0066cc; color: #ffffff;">
+                    Signup
+                </button>
             </div>
         </form>
     </main>
 </body>
+
 </html>
