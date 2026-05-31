@@ -1,3 +1,10 @@
+# [1.2.0-beta.2](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2026-05-31)
+
+
+### Features
+
+* dev signup, grouping views folder ([14176f1](https://github.com/akhromi-ahmad/athena/commit/14176f1b06186c03418beaec8e9ef2717f304f21))
+
 # [1.2.0-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.0...v1.2.0-beta.1) (2026-05-30)
 
 
