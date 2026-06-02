@@ -2,6 +2,10 @@ version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+<<<<<<< HEAD
     target-branch: "dev"
+=======
+    target-branch: "develop"
+>>>>>>> origin/dev
     schedule:
       interval: "weekly"
