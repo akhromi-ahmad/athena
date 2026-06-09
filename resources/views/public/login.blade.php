@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Login</title>
 </head>
 
 <body>
     <main>
-        <h1>Signup</h1>
+        <h1>Login</h1>
 
-        <form method="post" action="/signup">
+        <form method="post" action="/login">
             @csrf
+
+            @error('message')
+            <div>{{ $message }}</div>
+            @enderror
 
             @error('general')
             <div>{{ $message }}</div>
@@ -30,7 +34,7 @@
 
             <div>
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" autocomplete="new-password" required>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
                 @error('password')
                 <div>{{ $message }}</div>
                 @enderror
@@ -39,13 +43,13 @@
             <br>
 
             <div>
-                <button type="submit">Signup</button>
+                <button type="submit">Login</button>
             </div>
 
             <br>
 
             <div>
-                <button type="button" onclick="window.location.href='/'">Login</button>
+                <button type="button" onclick="window.location.href='/signup'">Signup</button>
             </div>
         </form>
     </main>

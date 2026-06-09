@@ -7,5 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 //index page
 Route::get('/', function () {
+    return view('public.login');
+});
+
+Route::get('/signup', function () {
     return view('public.signup');
 });
