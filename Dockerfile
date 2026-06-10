@@ -16,8 +16,8 @@ WORKDIR /var/www
 # Copy project
 COPY . .
 
-# Install dependencies
-RUN composer install --optimize-autoloader --no-dev
+# Update dependencies (Menggantikan composer install)
+RUN composer update --optimize-autoloader --no-dev
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
