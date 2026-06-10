@@ -26,10 +26,13 @@ WORKDIR /var/www
 COPY composer.json composer.lock ./
 
 # 6. Install dependensi Laravel secara aman tanpa memicu error versi PHP
-RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs
+RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs --no-scripts
 
 # 7. Copy seluruh sisa file project ke dalam container
 COPY . .
+
+# 7.5. Run deferred Composer scripts now that artisan is available
+RUN composer dump-autoload --optimize && php artisan package:discover --ansi
 
 # 8. Berikan hak akses untuk folder storage dan cache agar Laravel bisa menulis log/session
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
