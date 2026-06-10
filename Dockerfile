@@ -1,34 +1,41 @@
 FROM php:8.3-fpm
 
-# 1. Install dependencies (Termasuk library untuk PostgreSQL jika dibutuhkan)
+# 1. Install sistem dependencies yang dibutuhkan (termasuk libpq-dev untuk PostgreSQL)
 RUN apt-get update && apt-get install -y \
-    git curl zip unzip libpng-dev libonig-dev \
-    libxml2-dev libpq-dev nginx supervisor
+    git \
+    curl \
+    zip \
+    unzip \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libpq-dev \
+    nginx \
+    supervisor
 
-# 2. Install PHP extensions yang dibutuhkan Laravel
-RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+# 2. Install PHP extensions untuk Laravel dan PostgreSQL
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd
 
 # 3. Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# 4. Set working directory
 WORKDIR /var/www
 
-# 4. Copy konfigurasi project terlebih dahulu (untuk optimasi cache Docker)
+# 5. Copy file konfigurasi Composer terlebih dahulu untuk optimasi cache Docker
 COPY composer.json composer.lock ./
 
-# 5. Gunakan 'install' dengan ignore-platform-reqs agar aman dari konflik versi PHP
-RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs --no-scripts
+# 6. Install dependensi Laravel secara aman tanpa memicu error versi PHP
+RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs
 
-# 6. Copy seluruh sisa file project
+# 7. Copy seluruh sisa file project ke dalam container
 COPY . .
 
-# 6.5. Run Composer scripts now that all project files (including artisan) are present
-RUN composer dump-autoload --optimize && php artisan package:discover --ansi
-
-# 7. Atur permissions folder storage dan cache agar Laravel bisa menulis file log/session
+# 8. Berikan hak akses untuk folder storage dan cache agar Laravel bisa menulis log/session
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+# 9. Expose port yang akan digunakan oleh aplikasi
 EXPOSE 8000
 
-# Jika Anda belum mengonfigurasi Supervisor/Nginx, perintah di bawah ini tetap bisa digunakan di Railway untuk sementara waktu:
+# 10. Jalankan migrasi otomatis ke PostgreSQL Railway, lalu jalankan server Laravel
 CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000
