@@ -31,4 +31,4 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 EXPOSE 8000
 
 # Jika Anda belum mengonfigurasi Supervisor/Nginx, perintah di bawah ini tetap bisa digunakan di Railway untuk sementara waktu:
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000
