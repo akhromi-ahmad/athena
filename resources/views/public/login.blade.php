@@ -11,7 +11,7 @@
     <main>
         <h1>Login</h1>
 
-        <form method="post" action="/login">
+        <form method="post" action="{{ route('user.login') }}">
             @csrf
 
             @error('message')

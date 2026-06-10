@@ -11,7 +11,7 @@
     <main>
         <h1>Signup</h1>
 
-        <form method="post" action="/signup">
+        <form method="post" action="{{ route('user.signup') }}">
             @csrf
 
             @error('general')

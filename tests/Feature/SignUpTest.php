@@ -12,16 +12,16 @@ class SignUpTest extends TestCase
     public function test_it_allows_users_to_sign_up()
     {
         $data = [
-            'username' => 'John_Doe',
-            'password' => 'John_Doe123',
+            'username' => 'JohnDoe',
+            'password' => 'JohnDoe123',
         ];
 
         $response = $this->post('/signup', $data);
         $response->assertStatus(302);
-        $response->assertRedirect('/products');
+        $response->assertRedirect(route('login'));
 
         $this->assertDatabaseHas('users', [
-            'username' => 'John_Doe',
+            'username' => 'JohnDoe',
         ]);
     }
 }
