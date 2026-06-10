@@ -17,10 +17,13 @@ WORKDIR /var/www
 COPY composer.json composer.lock ./
 
 # 5. Gunakan 'install' dengan ignore-platform-reqs agar aman dari konflik versi PHP
-RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs
+RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs --no-scripts
 
 # 6. Copy seluruh sisa file project
 COPY . .
+
+# 6.5. Run Composer scripts now that all project files (including artisan) are present
+RUN composer dump-autoload --optimize && php artisan package:discover --ansi
 
 # 7. Atur permissions folder storage dan cache agar Laravel bisa menulis file log/session
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
