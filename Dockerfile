@@ -1,12 +1,20 @@
 FROM php:8.2-fpm
 
 # Install dependencies
+# Install system packages required for extensions and Composer
 RUN apt-get update && apt-get install -y \
-    git curl zip unzip libpng-dev libonig-dev \
-    libxml2-dev libpq-dev nginx supervisor
+    git \
+    unzip \
+    libzip-dev \
+    libicu-dev \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install zip pdo_mysql intl
+
+# Now run composer safely
+RUN composer install --optimize-autoloader --no-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo mbstring exif pcntl bcmath gd
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
