@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2026-06-10)
+
+
+### Features
+
+* implement user registration and login flows with validation and tests ([6aa3336](https://github.com/akhromi-ahmad/athena/commit/6aa33365aae2918e5520721d9103f92ec852169c))
+
 # [1.1.0-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.0.0...v1.1.0-beta.1) (2026-06-09)
 
 
