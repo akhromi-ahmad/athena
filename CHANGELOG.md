@@ -1,3 +1,10 @@
+# [1.1.0-beta.3](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2026-06-10)
+
+
+### Bug Fixes
+
+* defer composer post-install scripts until artisan is available ([510b709](https://github.com/akhromi-ahmad/athena/commit/510b70977965f25c2fb47e70d46cb707e1ded67d))
+
 # [1.1.0-beta.2](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2026-06-10)
 
 
