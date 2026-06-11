@@ -1,3 +1,10 @@
+# [1.1.0-beta.6](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2026-06-11)
+
+
+### Bug Fixes
+
+* resolve permission issue and redirect nginx logs ([4c1ff16](https://github.com/akhromi-ahmad/athena/commit/4c1ff16a0874564a72c74b996050d6553e48e1b0))
+
 # [1.1.0-beta.5](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2026-06-11)
 
 
