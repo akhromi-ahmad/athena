@@ -1,3 +1,10 @@
+# [1.1.0-beta.7](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.6...v1.1.0-beta.7) (2026-06-11)
+
+
+### Bug Fixes
+
+* resolve YAML syntax error in docker-build workflow ([149e408](https://github.com/akhromi-ahmad/athena/commit/149e408685597fc2e784b40dfb9f8b3460e1082e))
+
 # [1.1.0-beta.6](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2026-06-11)
 
 
