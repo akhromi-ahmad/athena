@@ -1,3 +1,10 @@
+# [1.1.0-beta.5](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2026-06-11)
+
+
+### Bug Fixes
+
+* optimize Dockerfile for Railway deployment ([a93c6a1](https://github.com/akhromi-ahmad/athena/commit/a93c6a1adaf2c02d565982792e5a5244163cb3d2))
+
 # [1.1.0-beta.4](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2026-06-10)
 
 
