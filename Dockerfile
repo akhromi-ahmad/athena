@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     nginx \
     supervisor \
+    && ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
@@ -112,7 +114,7 @@ RUN echo '#!/bin/sh' > /usr/local/bin/start.sh && \
     chmod +x /usr/local/bin/start.sh
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+RUN chown -R www-data:www-data /var/www
 
 # Expose dynamic port
 EXPOSE 8080
