@@ -39,12 +39,10 @@ class AuthRequest extends FormRequest
                 'regex:/^[a-zA-Z0-9]+$/',
                 'max:30',
                 'min:5',
-                $isSignup
-                    ? Rule::unique('users', 'username')
-                    : Rule::unique('users', 'username')->ignore(auth()->id()),
+                $isSignup ? Rule::unique('users', 'username') : null,
             ],
             'password' => [
-                $isSignup ? 'required' : 'nullable',
+                'required',
                 'string',
                 'min:8',
             ],
