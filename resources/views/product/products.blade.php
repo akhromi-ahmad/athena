@@ -6,7 +6,6 @@
     <title>Products</title>
 </head>
 <body>
-    <h1>Products list</h1>
     
 </body>
 </html>
