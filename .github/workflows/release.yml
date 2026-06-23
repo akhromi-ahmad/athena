@@ -16,19 +16,21 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js Environment
-        uses: actions/setup-node@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Run Semantic Release Executive
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm install -g semantic-release @semantic-release/changelog @semantic-release/git
-          npx semantic-release
+        run: npx semantic-release
