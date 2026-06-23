@@ -1,3 +1,15 @@
+## [1.1.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.0...v1.1.1) (2026-06-23)
+
+
+### Bug Fixes
+
+* add --no-scripts to composer install and defer artisan scripts ([df5207c](https://github.com/akhromi-ahmad/athena/commit/df5207cbfdf1fd25651f08c61c2c3fc4b9fdeec0))
+* defer composer post-install scripts until artisan is available ([510b709](https://github.com/akhromi-ahmad/athena/commit/510b70977965f25c2fb47e70d46cb707e1ded67d))
+* optimize Dockerfile for Railway deployment ([a93c6a1](https://github.com/akhromi-ahmad/athena/commit/a93c6a1adaf2c02d565982792e5a5244163cb3d2))
+* resolve auth validation deprecation, asset loading, guest routing, and session flash alerts ([c5c84fa](https://github.com/akhromi-ahmad/athena/commit/c5c84faca0731089b3992fb9eeb34781bfeffa8c))
+* resolve permission issue and redirect nginx logs ([4c1ff16](https://github.com/akhromi-ahmad/athena/commit/4c1ff16a0874564a72c74b996050d6553e48e1b0))
+* resolve YAML syntax error in docker-build workflow ([149e408](https://github.com/akhromi-ahmad/athena/commit/149e408685597fc2e784b40dfb9f8b3460e1082e))
+
 # [1.1.0-beta.8](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2026-06-23)
 
 
