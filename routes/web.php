@@ -3,11 +3,6 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// index page
-Route::get('/', function () {
-    return view('public.login');
-})->name('index');
-
 // signup page
 Route::get('/signup', function () {
     return view('public.signup');
@@ -18,6 +13,11 @@ Route::post('/logout', [UserController::class, 'logout'])->name('user.logout');
 
 // user can access login page if not authenticated
 Route::middleware('guest')->group(function () {
+    // index page
+    Route::get('/', function () {
+        return view('public.login');
+    })->name('index');
+
     Route::get('/login', function () {
         return view('public.login');
     })->name('login');
