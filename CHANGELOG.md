@@ -1,3 +1,10 @@
+# [1.1.0-beta.8](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2026-06-23)
+
+
+### Bug Fixes
+
+* resolve auth validation deprecation, asset loading, guest routing, and session flash alerts ([c5c84fa](https://github.com/akhromi-ahmad/athena/commit/c5c84faca0731089b3992fb9eeb34781bfeffa8c))
+
 # [1.1.0-beta.7](https://github.com/akhromi-ahmad/athena/compare/v1.1.0-beta.6...v1.1.0-beta.7) (2026-06-11)
 
 
