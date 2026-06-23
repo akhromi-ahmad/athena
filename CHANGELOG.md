@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/akhromi-ahmad/athena/compare/v1.1.1...v1.1.2) (2026-06-23)
+
+### 🐛 Bug Fixes
+
+* **workflow:** specify service name for railway deployment ([cc327a7](https://github.com/akhromi-ahmad/athena/commit/cc327a77907678479271e4bb2d999f292d17e701))
+
 ## [1.1.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.0...v1.1.1) (2026-06-23)
 
 
