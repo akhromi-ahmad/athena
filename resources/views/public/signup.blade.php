@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -15,14 +16,15 @@
             @csrf
 
             @error('general')
-            <div>{{ $message }}</div>
+                <div>{{ $message }}</div>
             @enderror
 
             <div>
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text" autocomplete="username" required value="{{ old('username') }}">
+                <input id="username" name="username" type="text" autocomplete="username" required
+                    value="{{ old('username') }}" class="border border-gray-400 rounded px-2 py-1">
                 @error('username')
-                <div>{{ $message }}</div>
+                    <div>{{ $message }}</div>
                 @enderror
             </div>
 
@@ -30,22 +32,24 @@
 
             <div>
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" autocomplete="new-password" required>
+                <input id="password" name="password" type="password" autocomplete="new-password" required
+                    class="border border-gray-400 rounded px-2 py-1">
                 @error('password')
-                <div>{{ $message }}</div>
+                    <div>{{ $message }}</div>
                 @enderror
             </div>
 
             <br>
 
             <div>
-                <button type="submit">Signup</button>
+                <button type="submit" class="border border-gray-400 rounded px-2 py-1">Signup</button>
             </div>
 
             <br>
 
             <div>
-                <button type="button" onclick="window.location.href='/'">Login</button>
+                <button type="button" onclick="window.location.href='/'"
+                    class="border border-gray-400 rounded px-2 py-1">Login</button>
             </div>
         </form>
     </main>

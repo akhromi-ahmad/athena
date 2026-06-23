@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
+    @if (session('success'))
+        <div class="bg-green-500 text-white p-2 rounded mb-4">{{ session('success') }}</div>
+    @endif
+
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
     <div class="flex justify-center">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officiis odit amet voluptates consequatur,
