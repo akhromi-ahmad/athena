@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthRequest;
-use App\Models\UserModel;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Http\Request;       // untuk login and logout function
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function signup(AuthRequest $request)
     {
-        $validated = $request->validated();                     // Validasi input (menggunakan class AuthRequest)
-        $user = UserModel::create([                             // Simpan user baru ke database
-            'username' => $validated['username'],
-            'password' => Hash::make($validated['password']),
+        $validated = $request->validated();                     // Input validation
+        $user = User::create([                             // Save new user to database
+            'username' => $validated['username'],               // store username
+            'password' => $validated['password'],               // store password (hashed automaticly)
         ]);
 
         return redirect()->route('login')->with('success', 'Signup successfully'); // show notif that signpup successfully and redirect to login page
@@ -21,14 +22,23 @@ class UserController extends Controller
 
     public function login(AuthRequest $request)
     {
-        $validated = $request->validated();
+        $credentials = $request->validated();               // Input validation
 
-        $user = UserModel::where('username', $validated['username'])->first();
+        if (Auth::attempt($credentials)) {                  // verify and stored login session automatically
+            $request->session()->regenerate();              // regenerate session id to prevent session fixation attack
 
-        if (! $user || ! Hash::check($validated['password'], $user->password)) {
-            return redirect()->back()->with('error', 'Invalid credentials');
+            return redirect()->route('products')->with('success', 'Login successfully'); // show notif that login successfully and redirect to products page
         }
 
-        return redirect()->route('products')->with('success', 'Login successfully');
+        return redirect()->back()->with('error', 'invalid credentials'); // show notif that invalid credentials and redirect to back login page
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();                                  // the function of this line is terminate the login session
+        $request->session()->invalidate();               // the function of this line is delete the session that already used
+        $request->session()->regenerateToken();          // the function of this line is regenerate the session token
+
+        return redirect()->route('login')->with('success', 'Logout successfully'); // show notif that logout successfully and redirect to login page
     }
 }

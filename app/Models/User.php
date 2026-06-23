@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class UserModel extends Model
+class User extends Authenticatable
 {
     use SoftDeletes;
-
-    protected $table = 'users';       // table di database
 
     protected $fillable = [               // kolom yang boleh diisi
         'username',
@@ -19,4 +17,11 @@ class UserModel extends Model
     protected $hidden = [               // kolom yang tidak boleh diakses (misal password)
         'password',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 }

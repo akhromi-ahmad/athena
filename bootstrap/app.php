@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->redirectTo(
+            guests: '/login',           // if user not login yet, redirect to login page
+            users: '/products'          // if user already login, redirect to products page
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
