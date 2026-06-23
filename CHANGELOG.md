@@ -1,4 +1,4 @@
-## [1.1.2-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.1...v1.1.2-beta.1) (2026-06-23)
+## [1.1.2](https://github.com/akhromi-ahmad/athena/compare/v1.1.1...v1.1.2) (2026-06-23)
 
 ### 🐛 Bug Fixes
 
