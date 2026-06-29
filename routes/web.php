@@ -23,7 +23,9 @@ Route::middleware('guest')->group(function () {
     })->name('login');
 
     // login proccess
-    Route::post('/login', [UserController::class, 'login'])->name('user.login');
+    Route::post('/login', [UserController::class, 'login'])
+        ->middleware('throttle:login')
+        ->name('user.login');
 
     // signup process
     Route::post('/signup', [UserController::class, 'signup'])->name('user.signup');

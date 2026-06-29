@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,9 +22,14 @@ class AppServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      */
     public function boot(): void
-{
-    if ($this->app->environment('production')) {
-        \Illuminate\Support\Facades\URL::forceScheme('https');
+    {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
+        // limit user login attempt 5 times per minutes
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinute(5)->by($request->input('username').$request->ip());
+        });
     }
- }
 }
