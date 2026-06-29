@@ -1,3 +1,9 @@
+## [1.2.0-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.2...v1.2.0-beta.1) (2026-06-24)
+
+### 🚀 Features
+
+* **auth:** implement rate limiting on login route ([366a304](https://github.com/akhromi-ahmad/athena/commit/366a304718f92e515680b0cf78e6f3d219cc1b39))
+
 ## [1.1.2](https://github.com/akhromi-ahmad/athena/compare/v1.1.1...v1.1.2) (2026-06-23)
 
 ### 🐛 Bug Fixes
