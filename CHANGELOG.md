@@ -1,3 +1,10 @@
+## [1.2.0-beta.2](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2026-06-29)
+
+### 🚀 Features
+
+* create base layout system with header, sidebar, and footer partials ([4c390c0](https://github.com/akhromi-ahmad/athena/commit/4c390c0f2b57020d5a2143018d459837bd4c7fa3))
+* update products view to extend and display within base layouts ([5d1f54e](https://github.com/akhromi-ahmad/athena/commit/5d1f54e051dee5ee17d6cdc8f84b7ac69644876e))
+
 ## [1.2.0-beta.1](https://github.com/akhromi-ahmad/athena/compare/v1.1.2...v1.2.0-beta.1) (2026-06-24)
 
 ### 🚀 Features
