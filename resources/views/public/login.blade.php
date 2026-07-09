@@ -20,6 +20,12 @@
         <div>{{ $message }}</div>
     @enderror
 
+    @error('password')
+        <div class="bg-red-500 text-white p-2 rounded mb-4">
+            {{ $message }}
+        </div>
+    @enderror
+
     <form method="post" action="{{ route('user.login') }}">
         @csrf
 
