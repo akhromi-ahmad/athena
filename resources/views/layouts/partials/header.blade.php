@@ -25,7 +25,9 @@
 
         <!-- Profil User -->
         <div class="flex items-center space-x-2 text-sm text-slate-300">
-            <span class="hidden md:inline font-medium">Ahmad Akhromi</span>
+            <span class="hidden md:inline font-medium">
+                {{ Auth::user()->username }}
+            </span>
             <!-- Form Logout -->
             <form action="{{ route('user.logout') }}" method="POST" class="inline">
                 @csrf
