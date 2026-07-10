@@ -1,3 +1,10 @@
+## [1.2.0-beta.3](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2026-07-09)
+
+### 🐛 Bug Fixes
+
+* add password validation error display on login page ([7c5fbf3](https://github.com/akhromi-ahmad/athena/commit/7c5fbf3548b493324306ae00026dff1c0dc01949))
+* improve route security, remove HTML duplication, and dynamic header ([6f5fef7](https://github.com/akhromi-ahmad/athena/commit/6f5fef72dc6b52bfc31424f50ddaddb19e7ed255))
+
 ## [1.2.0-beta.2](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2026-06-29)
 
 ### 🚀 Features
