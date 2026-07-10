@@ -1,3 +1,13 @@
+## [1.2.0-beta.4](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2026-07-10)
+
+### 🚀 Features
+
+* setup axios and alpinejs frontend dependencies ([b7ea706](https://github.com/akhromi-ahmad/athena/commit/b7ea706439d99e066dac5d2aacc9bae77cbfadfe))
+
+### 🐛 Bug Fixes
+
+* resolve security audit findings for auth flow and views ([e71990c](https://github.com/akhromi-ahmad/athena/commit/e71990c18edb3c3e6e31fdf9a3903ff2ff489323))
+
 ## [1.2.0-beta.3](https://github.com/akhromi-ahmad/athena/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2026-07-09)
 
 ### 🐛 Bug Fixes
