@@ -18,10 +18,6 @@
 
     <!-- Kanan: Quick Actions & Profile -->
     <div class="flex items-center space-x-4">
-        <!-- Tombol Tambah Cepat (+ Create New) -->
-        <button class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-1.5 rounded transition">
-            + Tambah Baru
-        </button>
 
         <!-- Profil User -->
         <div class="flex items-center space-x-2 text-sm text-slate-300">

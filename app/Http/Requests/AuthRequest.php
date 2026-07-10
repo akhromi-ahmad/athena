@@ -45,6 +45,7 @@ class AuthRequest extends FormRequest
                 'required',
                 'string',
                 'min:8',
+                $isSignup ? 'confirmed' : null,
             ],
         ];
     }

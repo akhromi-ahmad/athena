@@ -4,11 +4,13 @@
         <!-- Informasi Ringkas Pengguna -->
         <div class="px-3 py-4 border-b border-slate-700 flex items-center space-x-3 mb-4">
             <div class="h-8 w-8 rounded-full bg-slate-600 flex items-center justify-center font-bold text-sm text-white">
-                AA
+                {{ strtoupper(substr(Auth::user()->username, 0, 2)) }}
             </div>
             <div>
                 <p class="text-xs text-slate-400">Welcome,</p>
-                <p class="text-sm font-semibold text-white">Administrator</p>
+                <p class="text-sm font-semibold text-white">
+                    {{ Auth::user()->username }}
+                </p>
             </div>
         </div>
 

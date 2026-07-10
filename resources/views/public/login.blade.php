@@ -12,33 +12,29 @@
         <div class="bg-red-500 text-white p-2 rounded mb-4">{{ session('error') }}</div>
     @endif
 
-    @error('message')
-        <div>{{ $message }}</div>
-    @enderror
-
-    @error('general')
-        <div>{{ $message }}</div>
-    @enderror
-
-    @error('password')
-        <div class="bg-red-500 text-white p-2 rounded mb-4">
-            {{ $message }}
-        </div>
-    @enderror
-
     <form method="post" action="{{ route('user.login') }}">
         @csrf
 
         <div>
             <label for="username">Username</label>
             <input class="border border-gray-400 rounded px-2 py-1" type="text" id="username" name="username"
-                autocomplete="username" required>
+                value="{{ old('username') }}" autocomplete="username" required>
+            @error('username')
+                <div class="bg-red-500 text-white p-2 rounded mb-4">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div>
             <label for="password">Password</label>
             <input class="border border-gray-400 rounded px-2 py-1" type="password" id="password" name="password"
                 autocomplete="current-password" required>
+            @error('password')
+                <div class="bg-red-500 text-white p-2 rounded mb-4">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div>
@@ -47,7 +43,7 @@
     </form>
 
     <div>
-        <button type="button" onclick="window.location.href='/signup'"
-            class="border border-gray-400 rounded px-2 py-1">Signup</button>
+        <a href="{{ route('signup') }}" class="...">Signup</a>
+        <a href="{{ route('login') }}" class="...">Login</a>
     </div>
 @endsection
